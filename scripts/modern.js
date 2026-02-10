@@ -317,24 +317,36 @@ const ModernPortfolio = (() => {
         // Check if device supports hover (desktop)
         const isDesktop = window.matchMedia('(min-width: 1024px) and (hover: hover)').matches;
         
-        if (!isDesktop) {
-            // Remove video element on mobile to save bandwidth
-            profileVideo.remove();
-            return;
-        }
-
-        // Play video on hover
-        profileMedia.addEventListener('mouseenter', () => {
-            profileVideo.play().catch(error => {
-                console.warn('Video play failed:', error);
+        if (isDesktop) {
+            // Desktop: Play video on hover
+            profileMedia.addEventListener('mouseenter', () => {
+                profileVideo.play().catch(error => {
+                    console.warn('Video play failed:', error);
+                });
             });
-        });
 
-        // Pause and reset video when mouse leaves
-        profileMedia.addEventListener('mouseleave', () => {
-            profileVideo.pause();
-            profileVideo.currentTime = 0;
-        });
+            // Pause and reset video when mouse leaves
+            profileMedia.addEventListener('mouseleave', () => {
+                profileVideo.pause();
+                profileVideo.currentTime = 0;
+            });
+        } else {
+            // Mobile: Play/pause video on tap/click
+            let isPlaying = false;
+            
+            profileMedia.addEventListener('click', () => {
+                if (isPlaying) {
+                    profileVideo.pause();
+                    profileVideo.currentTime = 0;
+                    isPlaying = false;
+                } else {
+                    profileVideo.play().catch(error => {
+                        console.warn('Video play failed:', error);
+                    });
+                    isPlaying = true;
+                }
+            });
+        }
 
         // Preload video metadata
         profileVideo.load();
