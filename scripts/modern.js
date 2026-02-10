@@ -302,6 +302,45 @@ const ModernPortfolio = (() => {
     };
 
     // ========================================================================
+    // PROFILE VIDEO
+    // ========================================================================
+    
+    /**
+     * Initialize profile video hover effect (desktop only)
+     */
+    const initProfileVideo = () => {
+        const profileMedia = document.getElementById('profile-media');
+        const profileVideo = document.querySelector('.profile-video');
+        
+        if (!profileMedia || !profileVideo) return;
+
+        // Check if device supports hover (desktop)
+        const isDesktop = window.matchMedia('(min-width: 1024px) and (hover: hover)').matches;
+        
+        if (!isDesktop) {
+            // Remove video element on mobile to save bandwidth
+            profileVideo.remove();
+            return;
+        }
+
+        // Play video on hover
+        profileMedia.addEventListener('mouseenter', () => {
+            profileVideo.play().catch(error => {
+                console.warn('Video play failed:', error);
+            });
+        });
+
+        // Pause and reset video when mouse leaves
+        profileMedia.addEventListener('mouseleave', () => {
+            profileVideo.pause();
+            profileVideo.currentTime = 0;
+        });
+
+        // Preload video metadata
+        profileVideo.load();
+    };
+
+    // ========================================================================
     // PERFORMANCE MONITORING
     // ========================================================================
     
@@ -370,6 +409,7 @@ const ModernPortfolio = (() => {
             initKeyboardNavigation();
             initExternalLinks();
             initImageErrorHandling();
+            initProfileVideo();
             
             // Optional features
             if (CONFIG.enableAnalytics) {

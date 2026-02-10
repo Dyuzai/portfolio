@@ -78,7 +78,7 @@
             <!-- Hero Section -->
             <section class="hero-section">
                 <h1 class="hero-title">
-                    Olá! Sou Endryw.<br>
+                    Olá! Me chamo Endryw.<br>
                     Bem-vindo.
                 </h1>
                 <div class="hero-content">
@@ -162,8 +162,20 @@
         <!-- Right Column: Photo and Experience -->
         <div class="right-column">
             <!-- Profile Photo -->
-            <div class="profile-photo">
-                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800" alt="Endryw Lucas Nobre" loading="lazy">
+            <div class="profile-photo" id="profile-media">
+                <img src="./styles/image/thumb_portfolio.jpeg" alt="Endryw Lucas Nobre" loading="lazy" class="profile-image">
+                <video 
+                    class="profile-video" 
+                    muted 
+                    loop 
+                    playsinline
+                    preload="metadata"
+                    aria-label="Vídeo de apresentação de Endryw Lucas Nobre"
+                >
+                    <source src="./styles/image/portfolio_video.mp4" type="video/mp4">
+                    <source src="./styles/image/portfolio_video.webm" type="video/webm">
+                    Seu navegador não suporta vídeos.
+                </video>
             </div>
 
             <!-- Work Experience Card -->
@@ -176,7 +188,7 @@
                         </svg>
                         Experiência
                     </div>
-                    <a href="#" class="download-cv">
+                    <a href="./assets/cv/Endryw_Lucas_CV.pdf" target="_blank" rel="noopener noreferrer" class="download-cv" download="Endryw_Lucas_Nobre_CV.pdf">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                             <polyline points="7 10 12 15 17 10"/>
@@ -189,14 +201,14 @@
                 <div class="experience-list">
                     <div class="experience-item">
                         <div class="experience-logo">
-                            <img src="https://www.google.com/s2/favicons?domain=itaitinga.ce.gov.br&sz=64" alt="Prefeitura de Itaitinga" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect fill=%22%23e5e7eb%22 width=%2240%22 height=%2240%22/%3E%3C/svg%3E'">
+                            <img src="https://www.google.com/s2/favicons?domain=itaitinga.ce.gov.br&sz=128" alt="Prefeitura de Itaitinga" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect fill=%22%23e5e7eb%22 width=%2240%22 height=%2240%22/%3E%3C/svg%3E'">
                         </div>
                         <div class="experience-content">
                             <div class="experience-header">
                                 <h4 class="experience-company">Prefeitura Municipal de Itaitinga</h4>
                                 <span class="experience-period">Abr 2025 — Atual</span>
                             </div>
-                            <p class="experience-role">Estagiário de Desenvolvimento Front-End</p>
+                            <p class="experience-role">Desenvolvedor Full-Stack (Estágio)</p>
                         </div>
                     </div>
 
@@ -222,7 +234,7 @@
                                 <h4 class="experience-company">ExpandUp</h4>
                                 <span class="experience-period">Jan 2025 — Mai 2025</span>
                             </div>
-                            <p class="experience-role">Desenvolvedor Full-Stack</p>
+                            <p class="experience-role">Desenvolvedor Full-Stack (Estágio)</p>
                         </div>
                     </div>
 

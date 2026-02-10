@@ -337,21 +337,60 @@ body {
     overflow: hidden;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     position: relative;
+    cursor: pointer;
 }
 
-.profile-photo img {
+.profile-image,
+.profile-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(20%);
-    transform: scale(1.05);
-    transition: all 0.5s ease;
+    object-position: center 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease;
 }
 
-.profile-photo:hover img {
+.profile-image {
+    filter: grayscale(20%);
+    transform: scale(1.05);
+    opacity: 1;
+    z-index: 2;
+}
+
+.profile-video {
     filter: grayscale(0%);
     transform: scale(1);
+    opacity: 0;
+    z-index: 1;
 }
+
+/* Desktop only: Show video on hover */
+@media (min-width: 1024px) and (hover: hover) {
+    .profile-photo:hover .profile-image {
+        opacity: 0;
+        filter: grayscale(0%);
+        transform: scale(1);
+    }
+
+    .profile-photo:hover .profile-video {
+        opacity: 1;
+    }
+}
+
+/* Mobile: Only show image with hover effect */
+@media (max-width: 1023px), (hover: none) {
+    .profile-video {
+        display: none;
+    }
+
+    .profile-photo:active .profile-image {
+        filter: grayscale(0%);
+        transform: scale(1);
+    }
+}
+
 
 /* Work Card */
 .work-card {
