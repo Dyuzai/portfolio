@@ -1,0 +1,354 @@
+/**
+ * ============================================================================
+ * MINIMAL PORTFOLIO - INSPIRED BY IBEITIA.COM
+ * ============================================================================
+ * 
+ * Ultra-minimal, elegant design
+ * - Clean typography
+ * - Generous whitespace
+ * - Subtle interactions
+ * - Professional aesthetic
+ * 
+ * @author Endryw Lucas Nobre
+ * @version 3.0.0
+ * ============================================================================
+ */
+
+/* ============================================================================
+   RESET & BASE
+   ============================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    background: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================================
+   LAYOUT
+   ============================================================================ */
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+}
+
+/* ============================================================================
+   TYPOGRAPHY
+   ============================================================================ */
+
+h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 80px;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+a {
+    color: #000000;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+/* ============================================================================
+   LINKS SECTION
+   ============================================================================ */
+
+.links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.links-list a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+}
+
+/* ============================================================================
+   WORK EXPERIENCE
+   ============================================================================ */
+
+.work-list {
+    list-style: none;
+    counter-reset: work-counter;
+}
+
+.work-item {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #e5e5e5;
+    counter-increment: work-counter;
+    position: relative;
+}
+
+.work-item:last-child {
+    border-bottom: none;
+}
+
+.work-item::before {
+    content: counter(work-counter) ".";
+    position: absolute;
+    left: -30px;
+    color: #666;
+    font-size: 14px;
+}
+
+.work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.work-company {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.work-company a {
+    text-decoration: none;
+}
+
+.work-company a:hover {
+    text-decoration: underline;
+}
+
+.work-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: #666;
+}
+
+.work-role {
+    font-size: 16px;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.work-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.work-achievements {
+    list-style: none;
+    margin-top: 12px;
+}
+
+.work-achievements li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+.work-achievements li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #000;
+}
+
+/* ============================================================================
+   PROJECTS
+   ============================================================================ */
+
+.project-item {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+}
+
+.project-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.project-title a {
+    text-decoration: none;
+}
+
+.project-title a:hover {
+    text-decoration: underline;
+}
+
+.project-tech {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.project-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* ============================================================================
+   SKILLS
+   ============================================================================ */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.skill-category h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.skill-list {
+    list-style: none;
+}
+
+.skill-list li {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+/* ============================================================================
+   DOWNLOAD CV BUTTON
+   ============================================================================ */
+
+.download-cv {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 16px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.download-cv:hover {
+    opacity: 0.8;
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+footer {
+    margin-top: 100px;
+    padding-top: 32px;
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 60px 20px 80px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-top: 60px;
+    }
+
+    .work-item::before {
+        position: static;
+        display: inline;
+        margin-right: 8px;
+    }
+
+    .work-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+    body {
+        font-size: 12pt;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+}

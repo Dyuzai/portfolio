@@ -1,0 +1,915 @@
+/**
+ * ============================================================================
+ * PORTFOLIO - MAIN STYLESHEET
+ * ============================================================================
+ * 
+ * Arquitetura CSS Profissional
+ * - Sistema de Design Tokens
+ * - Metodologia BEM (Block Element Modifier)
+ * - Mobile-First Responsive Design
+ * - Performance Optimizations
+ * - Acessibilidade WCAG 2.1 AA
+ * 
+ * @author Endryw Lucas Nobre
+ * @version 2.0.0
+ * ============================================================================
+ */
+
+/* ============================================================================
+   1. DESIGN TOKENS & CSS CUSTOM PROPERTIES
+   ============================================================================ */
+
+:root {
+    /* Color Palette - Semantic Naming */
+    --color-bg-primary: #fafaf9;
+    --color-bg-secondary: #ffffff;
+    --color-bg-tertiary: #f5f5f4;
+    
+    --color-text-primary: #1c1917;
+    --color-text-secondary: #57534e;
+    --color-text-tertiary: #78716c;
+    
+    --color-accent-primary: #0c4a6e;
+    --color-accent-secondary: #0ea5e9;
+    --color-accent-hover: #0a3a56;
+    
+    --color-border-primary: #e7e5e4;
+    --color-border-secondary: #d6d3d1;
+    
+    --color-highlight-bg: #f0f9ff;
+    --color-success: #059669;
+    --color-warning: #d97706;
+    --color-error: #dc2626;
+    
+    /* Typography Scale */
+    --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-family-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    
+    --font-size-xs: 0.75rem;      /* 12px */
+    --font-size-sm: 0.875rem;     /* 14px */
+    --font-size-base: 1rem;       /* 16px */
+    --font-size-lg: 1.125rem;     /* 18px */
+    --font-size-xl: 1.25rem;      /* 20px */
+    --font-size-2xl: 1.5rem;      /* 24px */
+    --font-size-3xl: 1.875rem;    /* 30px */
+    --font-size-4xl: 2.25rem;     /* 36px */
+    --font-size-5xl: 3rem;        /* 48px */
+    
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    --line-height-loose: 2;
+    
+    /* Spacing Scale - 8px base */
+    --space-1: 0.25rem;   /* 4px */
+    --space-2: 0.5rem;    /* 8px */
+    --space-3: 0.75rem;   /* 12px */
+    --space-4: 1rem;      /* 16px */
+    --space-5: 1.25rem;   /* 20px */
+    --space-6: 1.5rem;    /* 24px */
+    --space-8: 2rem;      /* 32px */
+    --space-10: 2.5rem;   /* 40px */
+    --space-12: 3rem;     /* 48px */
+    --space-16: 4rem;     /* 64px */
+    --space-20: 5rem;     /* 80px */
+    --space-24: 6rem;     /* 96px */
+    --space-32: 8rem;     /* 128px */
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;   /* 4px */
+    --radius-md: 0.375rem;  /* 6px */
+    --radius-lg: 0.5rem;    /* 8px */
+    --radius-xl: 0.75rem;   /* 12px */
+    --radius-2xl: 1rem;     /* 16px */
+    --radius-full: 9999px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-accent: 0 8px 24px rgba(12, 74, 110, 0.15);
+    
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Z-index Scale */
+    --z-base: 0;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal: 400;
+    --z-popover: 500;
+    --z-tooltip: 600;
+    
+    /* Container */
+    --container-max-width: 680px;
+    --container-padding: var(--space-8);
+}
+
+/* Dark Mode Support (Optional - Ready to implement) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Uncomment to enable dark mode */
+        /* --color-bg-primary: #1c1917;
+        --color-bg-secondary: #292524;
+        --color-text-primary: #fafaf9;
+        --color-text-secondary: #d6d3d1; */
+    }
+}
+
+/* ============================================================================
+   2. RESET & BASE STYLES
+   ============================================================================ */
+
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove default button styles */
+button {
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* Remove default anchor styles */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Remove built-in form typography */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* ============================================================================
+   3. GLOBAL STYLES
+   ============================================================================ */
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-relaxed);
+    font-size: var(--font-size-base);
+    min-height: 100vh;
+}
+
+/* Focus Visible - Acessibilidade */
+:focus-visible {
+    outline: 2px solid var(--color-accent-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* Selection */
+::selection {
+    background-color: var(--color-accent-secondary);
+    color: white;
+}
+
+/* ============================================================================
+   4. UTILITY CLASSES
+   ============================================================================ */
+
+/* Visually Hidden - Acessibilidade */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Skip to Main Content */
+.skip-to-main {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--space-4) var(--space-6);
+    background-color: var(--color-accent-primary);
+    color: white;
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-md);
+    z-index: var(--z-tooltip);
+    transition: top var(--transition-fast);
+}
+
+.skip-to-main:focus {
+    top: var(--space-4);
+}
+
+/* ============================================================================
+   5. LAYOUT COMPONENTS
+   ============================================================================ */
+
+/* Container */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--space-20) var(--container-padding) var(--space-32);
+    animation: fadeIn var(--transition-slow) ease-out;
+}
+
+/* ============================================================================
+   6. HEADER SECTION
+   ============================================================================ */
+
+header {
+    margin-bottom: var(--space-20);
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Avatar */
+.avatar-wrapper {
+    margin-bottom: var(--space-8);
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius-full);
+    border: 3px solid var(--color-border-primary);
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.avatar:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Main Title */
+.main-title {
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--space-6);
+    letter-spacing: -0.02em;
+}
+
+.main-title .highlight {
+    color: var(--color-accent-primary);
+    position: relative;
+    display: inline-block;
+}
+
+.main-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+    border-radius: var(--radius-full);
+    opacity: 0.3;
+}
+
+/* Intro */
+.intro {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-10);
+}
+
+/* ============================================================================
+   7. BIO SECTION
+   ============================================================================ */
+
+.bio-section {
+    margin-bottom: var(--space-16);
+}
+
+.bio-paragraph {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-6);
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+}
+
+.bio-paragraph:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.bio-paragraph:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.bio-paragraph:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.company-highlight {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent-primary);
+    position: relative;
+}
+
+/* ============================================================================
+   8. SECTION COMPONENTS
+   ============================================================================ */
+
+.section {
+    margin-top: var(--space-20);
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+
+.section-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-8);
+    letter-spacing: -0.01em;
+    border-bottom: 2px solid var(--color-border-primary);
+    padding-bottom: var(--space-3);
+    position: relative;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+    border-radius: var(--radius-full);
+}
+
+/* ============================================================================
+   9. CONTACT & SOCIAL LINKS
+   ============================================================================ */
+
+.contact-links,
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.contact-link,
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-accent-primary);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    padding: var(--space-2) 0;
+    transition: all var(--transition-base);
+    position: relative;
+    width: fit-content;
+}
+
+.contact-link .icon,
+.social-link .icon {
+    flex-shrink: 0;
+    transition: transform var(--transition-base);
+}
+
+.contact-link::after,
+.social-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+    transition: width var(--transition-base);
+    border-radius: var(--radius-full);
+}
+
+.contact-link:hover,
+.social-link:hover {
+    color: var(--color-accent-hover);
+    transform: translateX(4px);
+}
+
+.contact-link:hover .icon,
+.social-link:hover .icon {
+    transform: scale(1.1);
+}
+
+.contact-link:hover::after,
+.social-link:hover::after {
+    width: 100%;
+}
+
+/* ============================================================================
+   10. WORK EXPERIENCE
+   ============================================================================ */
+
+.work-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: var(--space-8);
+    margin-bottom: var(--space-10);
+    padding-bottom: var(--space-10);
+    border-bottom: 1px solid var(--color-border-primary);
+    transition: all var(--transition-base);
+}
+
+.work-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.work-item:hover {
+    transform: translateX(4px);
+}
+
+/* Work Meta */
+.work-meta {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+}
+
+.work-meta .date {
+    display: block;
+    font-weight: var(--font-weight-medium);
+}
+
+/* Work Content */
+.work-content .company {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-2);
+    color: var(--color-text-primary);
+    transition: color var(--transition-base);
+}
+
+.work-content .company:hover {
+    color: var(--color-accent-primary);
+}
+
+.work-content .role {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: var(--space-3);
+    font-weight: var(--font-weight-medium);
+}
+
+.work-content .description {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-secondary);
+}
+
+/* Achievements List */
+.achievements {
+    margin-top: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.achievements li {
+    position: relative;
+    padding-left: var(--space-5);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+}
+
+.achievements li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+/* ============================================================================
+   11. PROJECTS
+   ============================================================================ */
+
+.project-card {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    margin-bottom: var(--space-6);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+}
+
+.project-card:hover {
+    border-color: var(--color-accent-primary);
+    box-shadow: var(--shadow-accent);
+    transform: translateY(-4px);
+}
+
+.project-card:hover::before {
+    transform: scaleX(1);
+}
+
+.project-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-3);
+}
+
+.project-title a {
+    color: var(--color-text-primary);
+    transition: color var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.project-title a:hover {
+    color: var(--color-accent-primary);
+}
+
+.external-link-icon {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all var(--transition-base);
+}
+
+.project-title a:hover .external-link-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Tech Stack */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+.tech-tag {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-xs);
+    color: var(--color-accent-primary);
+    background-color: var(--color-highlight-bg);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-medium);
+    transition: all var(--transition-fast);
+}
+
+.tech-tag:hover {
+    background-color: var(--color-accent-primary);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.project-description {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text-secondary);
+}
+
+/* ============================================================================
+   12. SKILLS
+   ============================================================================ */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-6);
+}
+
+.skill-category {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all var(--transition-base);
+}
+
+.skill-category:hover {
+    border-color: var(--color-accent-secondary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.skill-category-title {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-4);
+    color: var(--color-accent-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.skill-category-title::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(180deg, var(--color-accent-primary), var(--color-accent-secondary));
+    border-radius: var(--radius-full);
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.skill-list li {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    padding-left: var(--space-4);
+    position: relative;
+    transition: all var(--transition-fast);
+}
+
+.skill-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-secondary);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.skill-list li:hover {
+    color: var(--color-text-primary);
+    transform: translateX(4px);
+}
+
+.skill-list li:hover::before {
+    opacity: 1;
+}
+
+/* ============================================================================
+   13. FOOTER
+   ============================================================================ */
+
+footer {
+    margin-top: var(--space-24);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border-primary);
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+}
+
+.footer-text {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-3);
+}
+
+.footer-meta {
+    margin-top: var(--space-4);
+}
+
+.back-to-top {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-accent-primary);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+}
+
+.back-to-top:hover {
+    background-color: var(--color-accent-primary);
+    color: white;
+    border-color: var(--color-accent-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================================================
+   14. ANIMATIONS
+   ============================================================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ============================================================================
+   15. RESPONSIVE DESIGN - Mobile First
+   ============================================================================ */
+
+/* Tablet (768px and up) */
+@media (min-width: 48em) {
+    :root {
+        --container-padding: var(--space-10);
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 64em) {
+    :root {
+        --container-padding: var(--space-12);
+    }
+}
+
+/* Mobile Adjustments (below 768px) */
+@media (max-width: 47.9375em) {
+    .container {
+        padding: var(--space-16) var(--space-6) var(--space-20);
+    }
+    
+    .main-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .section-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    .work-item {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .work-meta {
+        order: 2;
+    }
+    
+    .work-content {
+        order: 1;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .skip-to-main,
+    .back-to-top {
+        display: none;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    .project-card,
+    .skill-category {
+        break-inside: avoid;
+    }
+}
+
+/* ============================================================================
+   16. PERFORMANCE OPTIMIZATIONS
+   ============================================================================ */
+
+/* GPU Acceleration for animations */
+.avatar,
+.project-card,
+.skill-category,
+.work-item {
+    will-change: transform;
+}
+
+/* Contain layout shifts */
+.container {
+    contain: layout style paint;
+}
+
+/* ============================================================================
+   END OF STYLESHEET
+   ============================================================================ */
