@@ -7,7 +7,7 @@
     
     <!-- SEO Meta Tags -->
     <title>Endryw Lucas Nobre | Desenvolvedor Full-Stack</title>
-    <meta name="description" content="Olá! Eu sou Endryw. Construo software com atenção aos detalhes técnicos e intuição de produto.">
+    <meta name="description" content="Olá! Sou Endryw. Construo software com profundidade técnica e intuição de produto.">
     <meta name="keywords" content="desenvolvedor full-stack, react, typescript, nodejs, nextjs, frontend, backend">
     <meta name="author" content="Endryw Lucas Nobre">
     <meta name="robots" content="index, follow">
@@ -16,514 +16,272 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://endrywlucas.dev">
     <meta property="og:title" content="Endryw Lucas Nobre | Desenvolvedor Full-Stack">
-    <meta property="og:description" content="Olá! Eu sou Endryw. Construo software com atenção aos detalhes técnicos e intuição de produto.">
+    <meta property="og:description" content="Olá! Sou Endryw. Construo software com profundidade técnica e intuição de produto.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💻%3C/text%3E%3C/svg%3E">
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Libre Baskerville', Georgia, serif;
-            background: #ffffff;
-            color: #000000;
-            line-height: 1.6;
-            font-size: 17px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .container {
-            max-width: 650px;
-            margin: 0 auto;
-            padding: 80px 24px 120px;
-        }
-
-        /* Typography */
-        h1 {
-            font-size: 42px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 32px;
-            letter-spacing: -0.02em;
-        }
-
-        h2 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-top: 80px;
-            margin-bottom: 24px;
-            letter-spacing: -0.01em;
-        }
-
-        h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        p {
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-
-        a {
-            color: #000000;
-            text-decoration: underline;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 2px;
-            transition: opacity 0.2s ease;
-        }
-
-        a:hover {
-            opacity: 0.6;
-        }
-
-        /* Links Section */
-        .links-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .links-list a {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 15px;
-        }
-
-        /* Work Experience */
-        .work-list {
-            list-style: none;
-            counter-reset: work-counter;
-        }
-
-        .work-item {
-            margin-bottom: 32px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid #e5e5e5;
-            counter-increment: work-counter;
-            position: relative;
-        }
-
-        .work-item:last-child {
-            border-bottom: none;
-        }
-
-        .work-item::before {
-            content: counter(work-counter) ".";
-            position: absolute;
-            left: -30px;
-            color: #666;
-            font-size: 14px;
-        }
-
-        .work-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .work-company {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .work-company a {
-            text-decoration: none;
-        }
-
-        .work-company a:hover {
-            text-decoration: underline;
-        }
-
-        .work-date {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 13px;
-            color: #666;
-        }
-
-        .work-role {
-            font-size: 16px;
-            font-style: italic;
-            color: #333;
-            margin-bottom: 12px;
-        }
-
-        .work-description {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #333;
-        }
-
-        .work-achievements {
-            list-style: none;
-            margin-top: 12px;
-        }
-
-        .work-achievements li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            font-size: 16px;
-            color: #333;
-        }
-
-        .work-achievements li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #000;
-        }
-
-        /* Projects */
-        .project-item {
-            margin-bottom: 32px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid #e5e5e5;
-        }
-
-        .project-item:last-child {
-            border-bottom: none;
-        }
-
-        .project-title {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .project-title a {
-            text-decoration: none;
-        }
-
-        .project-title a:hover {
-            text-decoration: underline;
-        }
-
-        .project-tech {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 12px;
-        }
-
-        .project-description {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #333;
-        }
-
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 32px;
-            margin-top: 24px;
-        }
-
-        .skill-category h3 {
-            font-size: 16px;
-            margin-bottom: 12px;
-        }
-
-        .skill-list {
-            list-style: none;
-        }
-
-        .skill-list li {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 6px;
-        }
-
-        /* Download CV Button */
-        .download-cv {
-            display: inline-block;
-            margin-top: 16px;
-            padding: 8px 16px;
-            background: #000;
-            color: #fff;
-            text-decoration: none;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 14px;
-            border-radius: 4px;
-            transition: opacity 0.2s ease;
-        }
-
-        .download-cv:hover {
-            opacity: 0.8;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 100px;
-            padding-top: 32px;
-            border-top: 1px solid #e5e5e5;
-            text-align: center;
-            font-size: 14px;
-            color: #666;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 60px 20px 80px;
-            }
-
-            h1 {
-                font-size: 32px;
-            }
-
-            h2 {
-                font-size: 18px;
-                margin-top: 60px;
-            }
-
-            .work-item::before {
-                position: static;
-                display: inline;
-                margin-right: 8px;
-            }
-
-            .work-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Print Styles */
-        @media print {
-            body {
-                font-size: 12pt;
-            }
-            
-            .container {
-                max-width: 100%;
-                padding: 0;
-            }
-            
-            a {
-                text-decoration: none;
-                color: #000;
-            }
-        }
-    </style>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./styles/modern.css">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Endryw Lucas Nobre",
+      "url": "https://endrywlucas.dev",
+      "jobTitle": "Desenvolvedor Full-Stack",
+      "email": "devendrywlucas@gmail.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/endryw-lucas-1013ab250/",
+        "https://github.com/Dyuzai"
+      ]
+    }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <h1>Olá! Eu sou Endryw. Bem-vindo.</h1>
-            <p>
-                Meu nome é Endryw Lucas. Construo software com atenção aos detalhes técnicos e intuição de produto.
-            </p>
-            <p>
-                Nos últimos anos, tive a oportunidade de trabalhar em diferentes contextos do desenvolvimento de software. Mais recentemente na <a href="#">Prefeitura de Itaitinga</a>, arquitetei e desenvolvi sistemas de saúde que centralizam informações de 60 mil cidadãos, reduzindo processos manuais de 3 dias para 2 horas. Na <a href="#">OrganizAí</a>, criei dashboards responsivos para mais de 700 usuários ativos. Na <a href="#">ExpandUp</a>, refatorei código legado e implementei features em SaaS para gestão de eventos, impactando diretamente milhares de usuários.
-            </p>
-            <p>
-                Sou particularmente atraído pelos estágios iniciais da criação de produtos, onde decisões técnicas e de design moldam tudo que vem depois. Há uma satisfação silenciosa em transformar ideias em soluções que ressoam com os usuários.
-            </p>
-            <p>
-                Acredito que a melhor tecnologia nos faz sentir compreendidos. Quando usamos produtos bem elaborados, percebemos a profundidade de entendimento por trás deles. Há um reconhecimento de que alguém considerou nossas necessidades, frustrações e aspirações.
-            </p>
-            <p>
-                Se você está interessado em desenvolvimento de software ou design de produto, adoraria conversar. Entre em contato!
-            </p>
-        </header>
-
-        <!-- Contact -->
-        <section>
-            <h2>Entre em contato</h2>
-            <ul class="links-list">
-                <li><a href="mailto:devendrywlucas@gmail.com">devendrywlucas@gmail.com</a></li>
-            </ul>
-        </section>
-
-        <!-- Links -->
-        <section>
-            <h2>Links</h2>
-            <ul class="links-list">
-                <li><a href="https://www.linkedin.com/in/endrywlucas" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                <li><a href="https://github.com/endrywlucas" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            </ul>
-        </section>
-
-        <!-- Work Experience -->
-        <section>
-            <h2>Experiência</h2>
-            <a href="#" class="download-cv">Download CV</a>
-            
-            <ol class="work-list">
-                <li class="work-item">
-                    <div class="work-header">
-                        <div class="work-company">
-                            <a href="#">Prefeitura Municipal de Itaitinga</a>
-                        </div>
-                        <div class="work-date">Abr 2025 — Atual</div>
-                    </div>
-                    <div class="work-role">Estagiário de Desenvolvimento Front-End</div>
-                    <ul class="work-achievements">
-                        <li>Arquitetei e desenvolvi sistema de saúde voltado a tratamento de lesões/feridas, centralizando cadastro de 60 mil cidadãos</li>
-                        <li>Redução de processos manuais de 3 dias para 2 horas através de automação</li>
-                        <li>Responsável por code review e análise de performance no sistema de agendamento de RG</li>
-                        <li>Melhoria de 80% em segurança através de implementação de boas práticas</li>
-                    </ul>
-                </li>
-
-                <li class="work-item">
-                    <div class="work-header">
-                        <div class="work-company">
-                            <a href="#">OrganizAí</a>
-                        </div>
-                        <div class="work-date">Set 2025 — Jan 2026</div>
-                    </div>
-                    <div class="work-role">Desenvolvedor Front-End (Contrato)</div>
-                    <ul class="work-achievements">
-                        <li>Desenvolvi dashboard web responsivo para mais de 700 usuários ativos</li>
-                        <li>Migração da plataforma de pagamentos de Hotmart para Stripe</li>
-                        <li>Desenvolvimento de landing page de vendas com integração completa de checkout</li>
-                    </ul>
-                </li>
-
-                <li class="work-item">
-                    <div class="work-header">
-                        <div class="work-company">
-                            <a href="#">ExpandUp</a>
-                        </div>
-                        <div class="work-date">Jan 2025 — Mai 2025</div>
-                    </div>
-                    <div class="work-role">Desenvolvedor Full-Stack</div>
-                    <ul class="work-achievements">
-                        <li>Refatoração de código legado (JavaScript/PHP 8), melhorando tempo de carregamento em 2 segundos</li>
-                        <li>Criação de features em SaaS para gestão de eventos (Chá de Bebê)</li>
-                        <li>Implementação de features na plataforma Boston Housing Authority, impactando 2 mil usuários</li>
-                    </ul>
-                </li>
-
-                <li class="work-item">
-                    <div class="work-header">
-                        <div class="work-company">
-                            <a href="#">Wizard Solutions</a>
-                        </div>
-                        <div class="work-date">Jul 2024 — Dez 2024</div>
-                    </div>
-                    <div class="work-role">Desenvolvedor Front-End (Contrato)</div>
-                    <ul class="work-achievements">
-                        <li>Criação do design do sistema de gerenciamento de produção com Figma</li>
-                        <li>Desenvolvimento do frontend seguindo padrões de escalabilidade e performance</li>
-                        <li>Solução permitiu identificação clara de falhas no fluxo, aumentando produtividade</li>
-                    </ul>
-                </li>
-            </ol>
-        </section>
-
-        <!-- Projects -->
-        <section>
-            <h2>Projetos</h2>
-            
-            <div class="project-item">
-                <div class="project-title">
-                    <a href="https://github.com/endrywlucas/buzzi" target="_blank" rel="noopener noreferrer">Buzzi</a>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="avatar-small">
+                    <span>E</span>
                 </div>
-                <div class="project-tech">React Native · TypeScript · TailwindCSS · shadcn</div>
-                <p class="project-description">
-                    Aplicativo mobile para rastreamento em tempo real dos transportes gratuitos da cidade. Design criado no Figma, implementado com React Native e shadcn-native para agilidade na criação de componentes.
-                </p>
+                <span class="nav-name">Endryw</span>
             </div>
-        </section>
+            <button class="theme-toggle" aria-label="Alternar tema" id="theme-toggle">
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2"/>
+                    <path d="M12 20v2"/>
+                    <path d="m4.93 4.93 1.41 1.41"/>
+                    <path d="m17.66 17.66 1.41 1.41"/>
+                    <path d="M2 12h2"/>
+                    <path d="M20 12h2"/>
+                    <path d="m6.34 17.66-1.41 1.41"/>
+                    <path d="m19.07 4.93-1.41 1.41"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
 
-        <!-- Skills -->
-        <section>
-            <h2>Habilidades Técnicas</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Linguagens</h3>
-                    <ul class="skill-list">
-                        <li>TypeScript</li>
-                        <li>JavaScript</li>
-                        <li>C#</li>
-                        <li>SQL (PostgreSQL)</li>
-                        <li>Python</li>
-                    </ul>
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Left Column: Bio and Info -->
+        <div class="left-column">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">
+                    Olá! Sou Endryw.<br>
+                    Bem-vindo.
+                </h1>
+                <div class="hero-content">
+                    <p>
+                        Meu nome é Endryw Lucas. Construo software com profundidade técnica e intuição de produto.
+                    </p>
+                    <p>
+                        Ao longo dos anos, tive a oportunidade de trabalhar em diferentes contextos do desenvolvimento de software. Mais recentemente na <span class="highlight">Prefeitura de Itaitinga</span>, arquitetei e desenvolvi sistemas de saúde que centralizam informações de 60 mil cidadãos, reduzindo processos manuais de 3 dias para 2 horas.
+                    </p>
+                    <p>
+                        Na <span class="highlight">OrganizAí</span>, criei dashboards responsivos para mais de 700 usuários ativos. Na <span class="highlight">ExpandUp</span>, refatorei código legado e implementei features em SaaS para gestão de eventos, impactando diretamente milhares de usuários.
+                    </p>
+                    <p class="hero-emphasis">
+                        Acredito que a melhor tecnologia nos faz sentir compreendidos. Quando usamos produtos cuidadosamente elaborados, sentimos a profundidade de entendimento por trás deles.
+                    </p>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>Frameworks</h3>
-                    <ul class="skill-list">
-                        <li>React / React Native</li>
-                        <li>Next.js</li>
-                        <li>Node.js</li>
-                        <li>NestJS</li>
-                        <li>WordPress</li>
-                    </ul>
+            </section>
+
+            <!-- Contact Card -->
+            <div class="card contact-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2"/>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                        </svg>
+                    </div>
+                    <span class="card-label">Entre em contato</span>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>Ferramentas</h3>
-                    <ul class="skill-list">
-                        <li>Git / GitHub</li>
-                        <li>Docker</li>
-                        <li>Google Cloud Platform</li>
-                        <li>VS Code</li>
-                        <li>Figma</li>
-                    </ul>
+                <a href="mailto:devendrywlucas@gmail.com" class="contact-link">
+                    devendrywlucas@gmail.com
+                    <svg class="icon-external" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" x2="21" y1="14" y2="3"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Links Card -->
+            <div class="card links-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                        </svg>
+                    </div>
+                    <span class="card-label">Links</span>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>Bibliotecas</h3>
-                    <ul class="skill-list">
-                        <li>shadcn / shadcn-native</li>
-                        <li>TailwindCSS</li>
-                        <li>Zustand</li>
-                        <li>Axios</li>
-                        <li>Lucide Icons</li>
-                    </ul>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/endrywlucas" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <div class="social-link-content">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect width="4" height="12" x="2" y="9"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </div>
+                        <svg class="icon-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/endrywlucas" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <div class="social-link-content">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                                <path d="M9 18c-4.51 2-5-2-7-2"/>
+                            </svg>
+                            <span>GitHub</span>
+                        </div>
+                        <svg class="icon-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Education -->
-        <section>
-            <h2>Educação</h2>
-            
-            <div class="work-item">
-                <div class="work-header">
-                    <div class="work-company">Universidade Estácio de Sá</div>
-                    <div class="work-date">Fev 2025 — Jun 2027</div>
-                </div>
-                <div class="work-role">Tecnólogo em Análise e Desenvolvimento de Sistemas</div>
-                <p class="work-description">Fortaleza, Brasil</p>
+        <!-- Right Column: Photo and Experience -->
+        <div class="right-column">
+            <!-- Profile Photo -->
+            <div class="profile-photo">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800" alt="Endryw Lucas Nobre" loading="lazy">
             </div>
-        </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>© 2026 Endryw Lucas Nobre. Desenvolvido com atenção aos detalhes.</p>
-        </footer>
-    </div>
+            <!-- Work Experience Card -->
+            <div class="card work-card">
+                <div class="card-title-row">
+                    <div class="card-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            <rect width="20" height="14" x="2" y="6" rx="2"/>
+                        </svg>
+                        Experiência
+                    </div>
+                    <a href="#" class="download-cv">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" x2="12" y1="15" y2="3"/>
+                        </svg>
+                        Download CV
+                    </a>
+                </div>
+
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <div class="experience-logo">
+                            <img src="https://www.google.com/s2/favicons?domain=itaitinga.ce.gov.br&sz=64" alt="Prefeitura de Itaitinga" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect fill=%22%23e5e7eb%22 width=%2240%22 height=%2240%22/%3E%3C/svg%3E'">
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <h4 class="experience-company">Prefeitura Municipal de Itaitinga</h4>
+                                <span class="experience-period">Abr 2025 — Atual</span>
+                            </div>
+                            <p class="experience-role">Estagiário de Desenvolvimento Front-End</p>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-logo">
+                            <img src="https://www.google.com/s2/favicons?domain=organizai.com&sz=64" alt="OrganizAí" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect fill=%22%23e5e7eb%22 width=%2240%22 height=%2240%22/%3E%3C/svg%3E'">
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <h4 class="experience-company">OrganizAí</h4>
+                                <span class="experience-period">Set 2025 — Jan 2026</span>
+                            </div>
+                            <p class="experience-role">Desenvolvedor Front-End (Contrato)</p>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-logo">
+                            <img src="https://www.google.com/s2/favicons?domain=expandup.com&sz=64" alt="ExpandUp" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect fill=%22%23e5e7eb%22 width=%2240%22 height=%2240%22/%3E%3C/svg%3E'">
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <h4 class="experience-company">ExpandUp</h4>
+                                <span class="experience-period">Jan 2025 — Mai 2025</span>
+                            </div>
+                            <p class="experience-role">Desenvolvedor Full-Stack</p>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-logo">
+                            <img src="https://www.google.com/s2/favicons?domain=wizardsolutions.com&sz=64" alt="Wizard Solutions" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect fill=%22%23e5e7eb%22 width=%2240%22 height=%2240%22/%3E%3C/svg%3E'">
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <h4 class="experience-company">Wizard Solutions</h4>
+                                <span class="experience-period">Jul 2024 — Dez 2024</span>
+                            </div>
+                            <p class="experience-role">Desenvolvedor Front-End (Contrato)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Card -->
+            <div class="card projects-card">
+                <div class="card-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                        <path d="M5 3v4"/>
+                        <path d="M19 17v4"/>
+                        <path d="M3 5h4"/>
+                        <path d="M17 19h4"/>
+                    </svg>
+                    Projetos
+                </div>
+
+                <div class="project-item">
+                    <h4 class="project-title">
+                        Buzzi
+                        <svg class="icon-chevron-right" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </h4>
+                    <p class="project-description">
+                        Aplicativo mobile para rastreamento em tempo real dos transportes gratuitos da cidade. Design criado no Figma, implementado com React Native e shadcn-native.
+                    </p>
+                    <div class="project-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                        </svg>
+                        github.com/endrywlucas/buzzi
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© <span id="current-year">2026</span> Endryw Lucas Nobre. Desenvolvido com atenção aos detalhes.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./scripts/modern.js"></script>
 </body>
 </html>
