@@ -1,3 +1,3 @@
-Acesse meu portfólio em: https://dyuzai.github.io/portfolio/
+Acesse meu portfólio em: https://endrywlucas.dev.br
 
 Inspiração de design: https://www.ibeitia.com/
